@@ -1,4 +1,4 @@
-<section class="content-header"><%= breadcrumb({ breadcrumbTitle: "User Registration" }) %></section>
+<section class="content-header"><%= breadcrumb({ breadcrumbTitle: "User Management" }) %></section>
 
 <section class="content">
   <div class="row">
@@ -10,6 +10,8 @@
           <input type="username" name="username" id="input-username" class="form-control" placeholder="Username" required autofocus>
           <label for="inputPassword" class="sr-only">Password</label>
           <input type="password" name="password" id="input-password" class="form-control" placeholder="Password" required>
+          <label for="inputVirtualCluster" class="sr-only">VirtualCluster</label>
+          <input type="virtualCluster" name="virtualCluster" id="input-virtual-cluster" class="form-control" placeholder="VirtualCluster">
           <div class="checkbox">
             <label><input type="checkbox" name="admin">Admin user</label>
           </div>

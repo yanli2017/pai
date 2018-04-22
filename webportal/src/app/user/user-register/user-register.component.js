@@ -36,6 +36,7 @@ $(document).ready(() => {
     e.preventDefault();
     const username = $('#form-register :input[name=username]').val();
     const password = $('#form-register :input[name=password]').val();
+    const virtualClusters = $('#form-register :input[name=virtualCluster]').val();
     const admin = $('#form-register :input[name=admin]').is(':checked') ? true : false;
     userAuth.checkToken((token) => {
       $.ajax({
@@ -52,11 +53,36 @@ $(document).ready(() => {
         },
         dataType: 'json',
         success: (data) => {
-          $('#form-register').trigger('reset');
+          console.log('put user');
+          console.log(JSON.stringify(data));
           if (data.error) {
             alert(data.message);
           } else {
-            alert('Add new user successfully');
+            $.ajax({
+              url: `${webportalConfig.restServerUri}/api/v1/user/${username}/virtualClusters`,
+              data: {
+                username: username,
+                virtualClusters: virtualClusters,
+              },
+              type: 'PATCH',
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+              dataType: 'json',
+              success: (updateVcData) => {
+                $('#form-register').trigger('reset');
+                if (updateVcData.error) {
+                  alert(updateVcData.message);
+                } else {
+                  alert('Add new user successfully');
+                }
+              },
+              error: (xhr, textStatus, error) => {
+                $('#form-register').trigger('reset');
+                const res = JSON.parse(xhr.responseText);
+                alert(res.message);
+              },
+            });
           }
         },
         error: (xhr, textStatus, error) => {

@@ -43,8 +43,8 @@ const userVcUpdateInputSchema = Joi.object().keys({
     .token()
     .required(),
   virtualClusters: Joi.string()
-    .required(),
-  modify: Joi.boolean(),
+    .allow('')
+    .optional(),
 }).required();
 
 // module exports

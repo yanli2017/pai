@@ -78,5 +78,33 @@ const remove = (req, res) => {
   }
 };
 
+/**
+ * Update user virtual clusters.
+ */
+const updateUserVc = (req, res) => {
+  const username = req.body.username;
+  const virtualClusters = req.body.virtualClusters;
+  if (req.user.admin) {
+    userModel.updateUserVc(username, virtualClusters, (err, state) => {
+      if (err || !state) {
+        logger.warn('update %s virtual cluster %s failed', username, virtualClusters);
+        return res.status(500).json({
+          error: 'UpdateVcFailed',
+          message: 'update failed',
+        });
+      } else {
+        return res.status(204).json({
+          message: 'update user virtual clusters successfully',
+        });
+      }
+    });
+  } else {
+    return res.status(401).json({
+      error: 'NotAuthorized',
+      message: 'not authorized',
+    });
+  }
+};
+
 // module exports
 module.exports = {update, remove};

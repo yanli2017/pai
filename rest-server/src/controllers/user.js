@@ -28,8 +28,8 @@ const update = (req, res) => {
   const admin = req.body.admin;
   const modify = req.body.modify;
   if (req.user.admin ||
-      username === req.user.username &&
-      (typeof admin === 'undefined' || !admin) && modify) {
+    username === req.user.username &&
+    (typeof admin === 'undefined' || !admin) && modify) {
     userModel.update(username, password, admin, modify, (err, state) => {
       if (err || !state) {
         logger.warn('update user %s failed', username);
@@ -84,6 +84,7 @@ const remove = (req, res) => {
 const updateUserVc = (req, res) => {
   const username = req.body.username;
   const virtualClusters = req.body.virtualClusters;
+  logger.warn('[CAN_TEST] req.body.admin is ' + admin);
   if (req.user.admin) {
     userModel.updateUserVc(username, virtualClusters, (err, state) => {
       if (err || !state) {
@@ -107,4 +108,4 @@ const updateUserVc = (req, res) => {
 };
 
 // module exports
-module.exports = {update, remove};
+module.exports = { update, remove, updateUserVc };

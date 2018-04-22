@@ -32,7 +32,7 @@ router.route('/')
     .delete(tokenConfig.check, param.validate(userConfig.userDeleteInputSchema), userController.remove);
 
 router.route('/:username/virtualClusters')
-    .patch(tokenConfig.check, param.validate(userConfig.userVcUpdateInputSchema), jobController.updateUserVc);
+    .patch(tokenConfig.check, param.validate(userConfig.userVcUpdateInputSchema), userController.updateUserVc);
 
 // module exports
 module.exports = router;

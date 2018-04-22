@@ -93,4 +93,71 @@ $(document).ready(() => {
       });
     });
   });
+
+  $('#form-update-user-basic-info').on('submit', (e) => {
+    e.preventDefault();
+    const username = $('#form-update-user-basic-info :input[name=username]').val();
+    const password = $('#form-update-user-basic-info :input[name=password]').val();
+    const admin = $('#form-update-user-basic-info :input[name=admin]').is(':checked') ? true : false;
+    userAuth.checkToken((token) => {
+      $.ajax({
+        url: `${webportalConfig.restServerUri}/api/v1/user`,
+        data: {
+          username,
+          password,
+          admin: admin,
+          modify: true,
+        },
+        type: 'PUT',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        dataType: 'json',
+        success: (data) => {
+          console.log('put user');
+          console.log(JSON.stringify(data));
+          if (data.error) {
+            alert(data.message);
+          } else {
+            if(admin) {
+              $.ajax({
+                url: `${webportalConfig.restServerUri}/api/v1/user/${username}/virtualClusters`,
+                data: {
+                  username: username,
+                  virtualClusters: '',
+                },
+                type: 'PATCH',
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                dataType: 'json',
+                success: (updateVcData) => {
+                  $('#form-update-user-basic-info').trigger('reset');
+                  if (updateVcData.error) {
+                    alert(updateVcData.message);
+                  } else {
+                    alert('Update user basic information successfully');
+                  }
+                },
+                error: (xhr, textStatus, error) => {
+                  $('#form-update-user-basic-info').trigger('reset');
+                  const res = JSON.parse(xhr.responseText);
+                  alert(res.message);
+                },
+              });
+            } else {
+              $('#form-update-user-basic-info').trigger('reset');
+              alert('Update user basic information successfully');
+            }
+          }
+        },
+        error: (xhr, textStatus, error) => {
+          $('#form-update-user-basic-info').trigger('reset');
+          const res = JSON.parse(xhr.responseText);
+          alert(res.message);
+        },
+      });
+    });
+  });
+
 });

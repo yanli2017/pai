@@ -4,19 +4,44 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="box">
-        <form id="form-register" class="form-register">
-          <h2 class="form-register-heading">Add new user</h2>
-          <label for="inputUsername" class="sr-only">Username</label>
-          <input type="username" name="username" id="input-username" class="form-control" placeholder="Username" required autofocus>
-          <label for="inputPassword" class="sr-only">Password</label>
-          <input type="password" name="password" id="input-password" class="form-control" placeholder="Password" required>
-          <label for="inputVirtualCluster" class="sr-only">VirtualCluster</label>
-          <input type="virtualCluster" name="virtualCluster" id="input-virtual-cluster" class="form-control" placeholder="VirtualCluster">
-          <div class="checkbox">
-            <label><input type="checkbox" name="admin">Admin user</label>
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs pull-left">
+                <li class="active"><a href="#add_user" data-toggle="tab" aria-expanded="true">Add User</a></li>
+                <li class=""><a href="#update_user" data-toggle="tab" aria-expanded="false">Update User</a></li>
+        </ul>
+        </div>
+        <div class="tab-content">
+          <div class="tab-pane active" id="add_user">
+              <form id="form-register" class="form-register">
+                  <h2 class="form-register-heading">Add new user</h2>
+                  <label for="inputUsername" class="sr-only">Username</label>
+                  <input type="username" name="username" id="input-username" class="form-control" placeholder="Username" required autofocus>
+                  <label for="inputPassword" class="sr-only">Password</label>
+                  <input type="password" name="password" id="input-password" class="form-control" placeholder="Password" required>
+                  <label for="inputVirtualCluster" class="sr-only">VirtualCluster</label>
+                  <input type="virtualCluster" name="virtualCluster" id="input-virtual-cluster" class="form-control" placeholder="VirtualCluster">
+                  <div class="checkbox">
+                    <label><input type="checkbox" name="admin">Admin user</label>
+                  </div>
+                  <button class="btn btn-lg btn-primary btn-block">register</button>
+                </form>
           </div>
-          <button class="btn btn-lg btn-primary btn-block">register</button>
-        </form>
+          <div class="tab-pane" id="update_user">
+              <form id="form-update-user-basic-info" class="form-register">
+                  <h3 class="form-register-heading">Update user information</h2>
+                  <label for="inputUsername" class="sr-only">Username</label>
+                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">Update user basic information</a></li>
+                  <input type="username" name="username" id="update-basic-info-input-username" class="form-control" placeholder="Username" required autofocus>
+                  <label for="inputPassword" class="sr-only">Password</label>
+                  <input type="password" name="password" id="update-basic-info-input-password" class="form-control" placeholder="Password" required>
+                  <div class="checkbox">
+                    <label><input type="checkbox" name="admin">Admin user</label>
+                  </div>
+                  <button class="btn btn-lg btn-primary btn-block">update</button>
+                </form>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

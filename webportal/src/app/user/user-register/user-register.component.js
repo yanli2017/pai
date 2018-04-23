@@ -61,7 +61,6 @@ $(document).ready(() => {
             $.ajax({
               url: `${webportalConfig.restServerUri}/api/v1/user/${username}/virtualClusters`,
               data: {
-                username: username,
                 virtualClusters: virtualClusters,
               },
               type: 'PATCH',
@@ -123,7 +122,6 @@ $(document).ready(() => {
               $.ajax({
                 url: `${webportalConfig.restServerUri}/api/v1/user/${username}/virtualClusters`,
                 data: {
-                  username: username,
                   virtualClusters: '',
                 },
                 type: 'PATCH',
@@ -160,15 +158,14 @@ $(document).ready(() => {
     });
   });
 
-  $('#form-update-information').on('submit', (e) => {
+  $('#form-update-virtual-cluster').on('submit', (e) => {
     e.preventDefault();
-    const username = $('#form-update-information :input[name=username]').val();
-    const virtualCluster = $('#form-update-information :input[name=virtualCluster]').val();
+    const username = $('#form-update-virtual-cluster :input[name=username]').val();
+    const virtualCluster = $('#form-update-virtual-cluster :input[name=virtualCluster]').val();
     userAuth.checkToken((token) => {
       $.ajax({
         url: `${webportalConfig.restServerUri}/api/v1/user/${username}/virtualClusters`,
         data: {
-          username,
           virtualClusters:virtualCluster
         },
         type: 'PATCH',
@@ -177,7 +174,7 @@ $(document).ready(() => {
         },
         dataType: 'json',
         success: (data) => {
-          $('#form-update-information').trigger('reset');
+          $('#form-update-virtual-cluster').trigger('reset');
           if (data.error) {
             alert(data.message);
           } else {
@@ -185,7 +182,7 @@ $(document).ready(() => {
           }
         },
         error: (xhr, textStatus, error) => {
-          $('#form-update-information').trigger('reset');
+          $('#form-update-virtual-cluster').trigger('reset');
           const res = JSON.parse(xhr.responseText);
           alert(res.message);
         },

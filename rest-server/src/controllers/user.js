@@ -82,7 +82,9 @@ const remove = (req, res) => {
  * Update user virtual clusters.
  */
 const updateUserVc = (req, res) => {
-  const username = req.body.username;
+  const username = req.params.username;
+  logger.warn('[CAN_TEST]');
+  logger.warn(username);
   const virtualClusters = req.body.virtualClusters;
   if (req.user.admin) {
     userModel.updateUserVc(username, virtualClusters, (err, state) => {

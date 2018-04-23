@@ -154,21 +154,36 @@ const updateUserVc = (username, virtualClusters, callback) => {
             logger.warn('[CAN_TEST] res admin is ' + res.get(etcdConfig.userAdminPath(username)));
             let updateVcList = res.get(etcdConfig.userAdminPath(username)) === 'true' ? Object.keys(vcList) : virtualClusters.trim().split(',').filter(updateVc => updateVc !== '');
             logger.warn(updateVcList);
+            let addInvalidVcFlag = false;
             for (let item of updateVcList) {
               logger.warn('updateVcList item is ' + item);
               if (!vcList.hasOwnProperty(item)) {
-                return callback(new Error('Invalid virtual cluster:' + item), false);
+                if(!res.has(etcdConfig.userVirtuClusterPath(username))) {
+                  logger.warn('[CAN_TEST] new user invalid virtual cluster'); //add user with invalid vc need to add default
+                  updateVcList.length = 0;
+                  addInvalidVcFlag = true;
+                  break;
+                } else {
+                  return callback(new Error('InvalidVirtualCluster'), false);
+                }
               }
             }
+            logger.warn('check virtual cluster pass');
+            logger.warn('addInvalidVcFlag is ' + addInvalidVcFlag);
             if (!updateVcList.includes('default')) { // always has 'default' queue
               updateVcList.push('default');
             }
+            updateVcList.sort();
             db.set(etcdConfig.userVirtuClusterPath(username), updateVcList.toString(), null, (errMsg, res) => {
               if (errMsg) {
                 logger.warn('update %s virtual cluster: %s failed, error message:%s', etcdConfig.userVirtuClusterPath(username), errMsg);
                 callback(errMsg, false);
               } else {
-                callback(null, true);
+                if(addInvalidVcFlag) {
+                  callback(new Error('InvalidVirtualCluster'), false)
+                } else {
+                  callback(null, true);
+                }
               }
             });
           }
@@ -179,6 +194,7 @@ const updateUserVc = (username, virtualClusters, callback) => {
 };
 
 const checkUserVc = (username, virtualCluster, callback) => {
+  logger.warn('checkUserVc');
   if (typeof username === 'undefined') {
     callback(new Error('user does not exist'), false);
   } else {
@@ -195,19 +211,24 @@ const checkUserVc = (username, virtualCluster, callback) => {
           logger.warn('type is ' + (typeof vcList));
           logger.warn(JSON.stringify(vcList));
           if (!vcList.hasOwnProperty(virtualCluster)) {
-            return callback(new Error('Invalid virtual cluster:' + virtualCluster), false);
+            return callback(new Error('VirtualClusterNotFound'), false);
           }
           db.get(etcdConfig.userVirtuClusterPath(username), null, (errMsg, res) => {
             if (errMsg || !res) {
               callback(errMsg, false);
             } else {
               let userVirtualClusters = res.get(etcdConfig.userVirtuClusterPath(username)).trim().split(',');
+              logger.warn('virtualCluster');
+              logger.warn(virtualCluster);
+              logger.warn('userVirtualClusters');
+              logger.warn(userVirtualClusters);
               for (let item of userVirtualClusters) {
+                logger.warn('item is ' + item);
                 if (item === virtualCluster) {
                   return callback(null, true);
                 }
               }
-              callback(new Error('User does not have this virtual cluster'), false);
+              callback(new Error('NotAuthorizedVirtualCluster'), false);
             }
           });
         }

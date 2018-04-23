@@ -65,7 +65,7 @@ const remove = (req, res) => {
           message: 'remove failed',
         });
       } else {
-        return res.status(204).json({
+        return res.status(201).json({
           message: 'remove successfully',
         });
       }
@@ -88,10 +88,17 @@ const updateUserVc = (req, res) => {
     userModel.updateUserVc(username, virtualClusters, (err, state) => {
       if (err || !state) {
         logger.warn('update %s virtual cluster %s failed', username, virtualClusters);
-        return res.status(500).json({
-          error: 'UpdateVcFailed',
-          message: 'update user virtual cluster failed',
-        });
+        if (err.message === 'InvalidVirtualCluster') {
+          return res.status(500).json({
+            error: 'InvalidVirtualCluster',
+            message: `update virtual cluster failed: could not find virtual cluster ${virtualClusters}`,
+          });
+        } else {
+          return res.status(500).json({
+            error: 'UpdateVcFailed',
+            message: 'update user virtual cluster failed',
+          });
+        }
       } else {
         return res.status(201).json({
           message: 'update user virtual clusters successfully',

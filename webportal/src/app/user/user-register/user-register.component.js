@@ -94,11 +94,11 @@ $(document).ready(() => {
     });
   });
 
-  $('#form-update-user-basic-info').on('submit', (e) => {
+  $('#form-update-account').on('submit', (e) => {
     e.preventDefault();
-    const username = $('#form-update-user-basic-info :input[name=username]').val();
-    const password = $('#form-update-user-basic-info :input[name=password]').val();
-    const admin = $('#form-update-user-basic-info :input[name=admin]').is(':checked') ? true : false;
+    const username = $('#form-update-account :input[name=username]').val();
+    const password = $('#form-update-account :input[name=password]').val();
+    const admin = $('#form-update-account :input[name=admin]').is(':checked') ? true : false;
     userAuth.checkToken((token) => {
       $.ajax({
         url: `${webportalConfig.restServerUri}/api/v1/user`,
@@ -132,7 +132,7 @@ $(document).ready(() => {
                 },
                 dataType: 'json',
                 success: (updateVcData) => {
-                  $('#form-update-user-basic-info').trigger('reset');
+                  $('#form-update-account').trigger('reset');
                   if (updateVcData.error) {
                     alert(updateVcData.message);
                   } else {
@@ -140,19 +140,84 @@ $(document).ready(() => {
                   }
                 },
                 error: (xhr, textStatus, error) => {
-                  $('#form-update-user-basic-info').trigger('reset');
+                  $('#form-update-account').trigger('reset');
                   const res = JSON.parse(xhr.responseText);
                   alert(res.message);
                 },
               });
             } else {
-              $('#form-update-user-basic-info').trigger('reset');
+              $('#form-update-account').trigger('reset');
               alert('Update user basic information successfully');
             }
           }
         },
         error: (xhr, textStatus, error) => {
-          $('#form-update-user-basic-info').trigger('reset');
+          $('#form-update-account').trigger('reset');
+          const res = JSON.parse(xhr.responseText);
+          alert(res.message);
+        },
+      });
+    });
+  });
+
+  $('#form-update-information').on('submit', (e) => {
+    e.preventDefault();
+    const username = $('#form-update-information :input[name=username]').val();
+    const virtualCluster = $('#form-update-information :input[name=virtualCluster]').val();
+    userAuth.checkToken((token) => {
+      $.ajax({
+        url: `${webportalConfig.restServerUri}/api/v1/user/${username}/virtualClusters`,
+        data: {
+          username,
+          virtualClusters:virtualCluster
+        },
+        type: 'PATCH',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        dataType: 'json',
+        success: (data) => {
+          $('#form-update-information').trigger('reset');
+          if (data.error) {
+            alert(data.message);
+          } else {
+            alert('Update user information successfully');
+          }
+        },
+        error: (xhr, textStatus, error) => {
+          $('#form-update-information').trigger('reset');
+          const res = JSON.parse(xhr.responseText);
+          alert(res.message);
+        },
+      });
+    });
+  });
+
+
+  $('#form-remove-user').on('submit', (e) => {
+    e.preventDefault();
+    const username = $('#form-remove-user :input[name=username]').val();
+    userAuth.checkToken((token) => {
+      $.ajax({
+        url: `${webportalConfig.restServerUri}/api/v1/user`,
+        data: {
+          username,
+        },
+        type: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        dataType: 'json',
+        success: (data) => {
+          $('#form-remove-user').trigger('reset');
+          if (data.error) {
+            alert(data.message);
+          } else {
+            alert('Remove user successfully');
+          }
+        },
+        error: (xhr, textStatus, error) => {
+          $('#form-remove-user').trigger('reset');
           const res = JSON.parse(xhr.responseText);
           alert(res.message);
         },

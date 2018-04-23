@@ -4,10 +4,12 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="box">
-        <div class="nav-tabs-custom">
+        <div class="user-management-nav nav-tabs-custom">
             <ul class="nav nav-tabs pull-left">
                 <li class="active"><a href="#add_user" data-toggle="tab" aria-expanded="true">Add User</a></li>
-                <li class=""><a href="#update_user" data-toggle="tab" aria-expanded="false">Update User</a></li>
+                <li class=""><a href="#update_account" data-toggle="tab" aria-expanded="false">Change Password</a></li>
+                <li class=""><a href="#update_information" data-toggle="tab" aria-expanded="false">Update VirtualClusters</a></li>
+                <li class=""><a href="#remove_user" data-toggle="tab" aria-expanded="false">Remove User</a></li>
         </ul>
         </div>
         <div class="tab-content">
@@ -19,27 +21,44 @@
                   <label for="inputPassword" class="sr-only">Password</label>
                   <input type="password" name="password" id="input-password" class="form-control" placeholder="Password" required>
                   <label for="inputVirtualCluster" class="sr-only">VirtualCluster</label>
-                  <input type="virtualCluster" name="virtualCluster" id="input-virtual-cluster" class="form-control" placeholder="VirtualCluster">
+                  <input type="virtualCluster" name="virtualCluster" id="input-virtual-cluster" class="form-control" placeholder="VirtualCluster(e.g vc1,vc2)">
                   <div class="checkbox">
                     <label><input type="checkbox" name="admin">Admin user</label>
                   </div>
                   <button class="btn btn-lg btn-primary btn-block">register</button>
                 </form>
           </div>
-          <div class="tab-pane" id="update_user">
-              <form id="form-update-user-basic-info" class="form-register">
-                  <h3 class="form-register-heading">Update user information</h2>
+          <div class="tab-pane" id="update_account">
+              <form id="form-update-account" class="form-register">
+                  <h2 class="form-register-heading">Account Setting</h2>
                   <label for="inputUsername" class="sr-only">Username</label>
-                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">Update user basic information</a></li>
-                  <input type="username" name="username" id="update-basic-info-input-username" class="form-control" placeholder="Username" required autofocus>
+                  <input type="username" name="username" id="update-account-input-username" class="form-control" placeholder="Username" required autofocus>
                   <label for="inputPassword" class="sr-only">Password</label>
-                  <input type="password" name="password" id="update-basic-info-input-password" class="form-control" placeholder="Password" required>
+                  <input type="password" name="password" id="update-account-input-password" class="form-control" placeholder="Password" required>
                   <div class="checkbox">
                     <label><input type="checkbox" name="admin">Admin user</label>
                   </div>
-                  <button class="btn btn-lg btn-primary btn-block">update</button>
+                  <button class="btn btn-lg btn-primary btn-block">Update account</button>
                 </form>
           </div>
+          <div class="tab-pane" id="update_information">
+              <form id="form-update-information" class="form-register">
+                  <h2 class="form-register-heading">Update Information</h2>
+                  <label for="inputUsername" class="sr-only">Username</label>
+                  <input type="username" name="username" id="update-information-input-username" class="form-control" placeholder="Username" required autofocus>
+                  <label for="inputVirtualCluster" class="sr-only">VirtualCluster</label>
+                  <input type="virtualCluster" name="virtualCluster" id="update-information-input-virtualCluster" class="form-control" placeholder="VirtualCluster">
+                  <button class="btn btn-lg btn-primary btn-block">Update Information</button>
+              </form>
+          </div>
+          <div class="tab-pane" id="remove_user">
+              <form id="form-remove-user" class="form-register">
+                  <h2 class="form-register-heading">Remove User</h2>
+                  <label for="inputUsername" class="sr-only">Username</label>
+                  <input type="username" name="username" id="remove-user-input-username" class="form-control" placeholder="Username" required autofocus>
+                  <button class="btn btn-lg btn-primary btn-block">Remove User</button>
+              </form>
+           </div>
         </div>
 
       </div>

@@ -151,10 +151,13 @@ class Job {
           }
         });
     }
-    if (!userModel.checkUserVc(data.username, data.virtualCluster, (errMsg, res) => {
-      if (errMsg || res) {
-        logger.warn('user virtual cluster invalid');
-        next('user virtual cluster invalid');
+    logger.warn('check virtual cluster');
+    logger.warn(data.username);
+    logger.warn(data.virtualCluster);
+    userModel.checkUserVc(data.username, data.virtualCluster, (errMsg, res) => {
+      if (errMsg || !res) {
+        logger.warn(errMsg.message);
+        next(errMsg);
       } else {
         const jobDir = path.join(launcherConfig.jobRootDir, data.username, name);
         fse.ensureDir(jobDir, (err) => {
@@ -234,7 +237,7 @@ class Job {
           }
         });
       }
-    }));
+    });
   }
 
 

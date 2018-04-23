@@ -77,7 +77,7 @@ const etcdConfigSchema = Joi.object().keys({
     .required(),
 }).required();
 
-const { error, value } = Joi.validate(etcdConfig, etcdConfigSchema);
+const {error, value} = Joi.validate(etcdConfig, etcdConfigSchema);
 if (error) {
   throw new Error(`config error\n${error}`);
 }

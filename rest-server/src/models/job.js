@@ -197,7 +197,7 @@ class Job {
                 fse.outputJson(
                   path.join(jobDir, launcherConfig.jobConfigFileName),
                   originData,
-                  { 'spaces': 2 },
+                  {'spaces': 2},
                   (err) => parallelCallback(err));
               },
               (parallelCallback) => {
@@ -205,7 +205,7 @@ class Job {
                 fse.outputJson(
                   path.join(jobDir, launcherConfig.frameworkDescriptionFilename),
                   frameworkDescription,
-                  { 'spaces': 2 },
+                  {'spaces': 2},
                   (err) => parallelCallback(err));
               },
             ], (parallelError) => {
@@ -240,8 +240,6 @@ class Job {
     });
   }
 
-
-
   deleteJob(name, data, next) {
     unirest.get(launcherConfig.frameworkRequestPath(name))
       .headers(launcherConfig.webserviceRequestHeaders)
@@ -271,7 +269,7 @@ class Job {
         } else if (data.username === requestResJson.frameworkDescriptor.user.name || data.admin) {
           unirest.put(launcherConfig.frameworkExecutionTypePath(name))
             .headers(launcherConfig.webserviceRequestHeaders)
-            .send({ 'executionType': data.value })
+            .send({'executionType': data.value})
             .end((res) => next());
         } else {
           next(new Error('can not execute other user\'s job'));
@@ -396,7 +394,7 @@ class Job {
     if (taskRoleStatuses) {
       for (let taskRole of Object.keys(taskRoleStatuses)) {
         jobDetail.taskRoles[taskRole] = {
-          taskRoleStatus: { name: taskRole },
+          taskRoleStatus: {name: taskRole},
           taskStatuses: [],
         };
         for (let task of taskRoleStatuses[taskRole].taskStatuses.taskStatusArray) {
@@ -447,7 +445,7 @@ class Job {
     const killOnCompleted = (data.killAllOnCompletedTaskNumber > 0);
     const frameworkDescription = {
       'version': 10,
-      'user': { 'name': data.username },
+      'user': {'name': data.username},
       'taskRoles': {},
       'platformSpecificParameters': {
         'queue': data.virtualCluster,

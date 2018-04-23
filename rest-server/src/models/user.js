@@ -152,14 +152,14 @@ const updateUserVc = (username, virtualClusters, callback) => {
             logger.warn('type is ' + (typeof vcList));
             logger.warn(JSON.stringify(vcList));
             logger.warn('[CAN_TEST] res admin is ' + res.get(etcdConfig.userAdminPath(username)));
-            let updateVcList = res.get(etcdConfig.userAdminPath(username)) === 'true' ? Object.keys(vcList) : virtualClusters.trim().split(',').filter(updateVc => updateVc !== '');
+            let updateVcList = (res.get(etcdConfig.userAdminPath(username)) === 'true') ? Object.keys(vcList) : virtualClusters.trim().split(',').filter((updateVc) => (updateVc !== ''));
             logger.warn(updateVcList);
             let addInvalidVcFlag = false;
             for (let item of updateVcList) {
               logger.warn('updateVcList item is ' + item);
               if (!vcList.hasOwnProperty(item)) {
-                if(!res.has(etcdConfig.userVirtuClusterPath(username))) {
-                  logger.warn('[CAN_TEST] new user invalid virtual cluster'); //add user with invalid vc need to add default
+                if (!res.has(etcdConfig.userVirtuClusterPath(username))) {
+                  logger.warn('[CAN_TEST] new user invalid virtual cluster'); // add user with invalid vc need to add default
                   updateVcList.length = 0;
                   addInvalidVcFlag = true;
                   break;
@@ -179,15 +179,15 @@ const updateUserVc = (username, virtualClusters, callback) => {
                 logger.warn('update %s virtual cluster: %s failed, error message:%s', etcdConfig.userVirtuClusterPath(username), errMsg);
                 callback(errMsg, false);
               } else {
-                if(addInvalidVcFlag) {
-                  callback(new Error('InvalidVirtualCluster'), false)
+                if (addInvalidVcFlag) {
+                  callback(new Error('InvalidVirtualCluster'), false);
                 } else {
                   callback(null, true);
                 }
               }
             });
           }
-        })
+        });
       }
     });
   }

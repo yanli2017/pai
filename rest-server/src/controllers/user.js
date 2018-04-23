@@ -116,4 +116,4 @@ const updateUserVc = (req, res) => {
 };
 
 // module exports
-module.exports = { update, remove, updateUserVc };
+module.exports = {update, remove, updateUserVc};

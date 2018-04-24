@@ -112,12 +112,12 @@ const get = (req, res) => {
  * Submit or update job.
  */
 const update = (req, res) => {
+  logger.warn(JSON.stringify(req.body));
   Job.prototype.putJob(req.job.name, req.body, req.user.username, (err) => {
     if (err) {
       logger.warn('update job %s error\n%s', req.job.name, err.stack);
       logger.warn('controller job.js');
       logger.warn(err.message);
-      logger.warn(req.body.virtualCluster);
       if (err.message === 'VirtualClusterNotFound') {
         return res.status(500).json({
           error: 'JobUpdateWithInvalidVirtualCluster',

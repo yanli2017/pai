@@ -154,6 +154,7 @@ const updateUserVc = (username, virtualClusters, callback) => {
             logger.warn('[CAN_TEST] res admin is ' + res.get(etcdConfig.userAdminPath(username)));
             let updateVcList = (res.get(etcdConfig.userAdminPath(username)) === 'true') ? Object.keys(vcList) : virtualClusters.trim().split(',').filter((updateVc) => (updateVc !== ''));
             logger.warn(updateVcList);
+            logger.warn(res);
             let addInvalidVcFlag = false;
             for (let item of updateVcList) {
               logger.warn('updateVcList item is ' + item);
@@ -174,6 +175,7 @@ const updateUserVc = (username, virtualClusters, callback) => {
               updateVcList.push('default');
             }
             updateVcList.sort();
+            logger.warn(updateVcList.toString());
             db.set(etcdConfig.userVirtuClusterPath(username), updateVcList.toString(), null, (errMsg, res) => {
               if (errMsg) {
                 logger.warn('update %s virtual cluster: %s failed, error message:%s', etcdConfig.userVirtuClusterPath(username), errMsg);
@@ -198,6 +200,8 @@ const checkUserVc = (username, virtualCluster, callback) => {
   if (typeof username === 'undefined') {
     callback(new Error('user does not exist'), false);
   } else {
+    virtualCluster = (virtualCluster === '') ? 'default' : virtualCluster;
+    logger.warn(virtualCluster);
     if (virtualCluster === 'default') {
       callback(null, true); // all users have 'default' right
     } else {
@@ -213,10 +217,13 @@ const checkUserVc = (username, virtualCluster, callback) => {
           if (!vcList.hasOwnProperty(virtualCluster)) {
             return callback(new Error('VirtualClusterNotFound'), false);
           }
+          logger.warn(etcdConfig.userVirtuClusterPath(username));
           db.get(etcdConfig.userVirtuClusterPath(username), null, (errMsg, res) => {
+            logger.warn( 'db.get ' + errMsg);
             if (errMsg || !res) {
               callback(errMsg, false);
             } else {
+              logger.warn(res);
               let userVirtualClusters = res.get(etcdConfig.userVirtuClusterPath(username)).trim().split(',');
               logger.warn('virtualCluster');
               logger.warn(virtualCluster);

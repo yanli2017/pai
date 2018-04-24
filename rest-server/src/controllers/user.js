@@ -90,6 +90,7 @@ const updateUserVc = (req, res) => {
     userModel.updateUserVc(username, virtualClusters, (err, state) => {
       if (err || !state) {
         logger.warn('update %s virtual cluster %s failed', username, virtualClusters);
+        logger.warn(err.message);
         if (err.message === 'InvalidVirtualCluster') {
           return res.status(500).json({
             error: 'InvalidVirtualCluster',

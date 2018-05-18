@@ -152,7 +152,7 @@ public class SelectionManager { // THREAD SAFE
   }
 
   private void filterNodesByRackSelectionPolicy(ResourceDescriptor requestResource, int startStatesTaskCount) {
-    //TODO: Node GPU policy filter the nodes;
+    //TODO: Node Gpu policy filter the nodes;
   }
 
   private SelectionResult selectNodes(ResourceDescriptor requestResource, int startStatesTaskCount) {

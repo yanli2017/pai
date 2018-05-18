@@ -66,20 +66,20 @@ public class SelectionManagerTest {
 
     SelectionManager sm = new SelectionManager(am, am.conf, am.statusManager, am.requestManager);
 
-    long candidateGPU = sm.selectCandidateGpuAttribute(node1, 1);
-    Assert.assertEquals(1L, candidateGPU);
-    candidateGPU = sm.selectCandidateGpuAttribute(node1, 2);
-    Assert.assertEquals(3L, candidateGPU);
+    long candidateGpu = sm.selectCandidateGpuAttribute(node1, 1);
+    Assert.assertEquals(1L, candidateGpu);
+    candidateGpu = sm.selectCandidateGpuAttribute(node1, 2);
+    Assert.assertEquals(3L, candidateGpu);
 
-    candidateGPU = sm.selectCandidateGpuAttribute(node3, 2);
-    Assert.assertEquals(3L, candidateGPU);
-    candidateGPU = sm.selectCandidateGpuAttribute(node3, 4);
-    Assert.assertEquals(0xFL, candidateGPU);
-    candidateGPU = sm.selectCandidateGpuAttribute(node3, 8);
-    Assert.assertEquals(0xFFL, candidateGPU);
+    candidateGpu = sm.selectCandidateGpuAttribute(node3, 2);
+    Assert.assertEquals(3L, candidateGpu);
+    candidateGpu = sm.selectCandidateGpuAttribute(node3, 4);
+    Assert.assertEquals(0xFL, candidateGpu);
+    candidateGpu = sm.selectCandidateGpuAttribute(node3, 8);
+    Assert.assertEquals(0xFFL, candidateGpu);
 
-    candidateGPU = sm.selectCandidateGpuAttribute(node4, 2);
-    Assert.assertEquals(0x30L, candidateGPU);
+    candidateGpu = sm.selectCandidateGpuAttribute(node4, 2);
+    Assert.assertEquals(0x30L, candidateGpu);
 
     SelectionResult result = sm.select(ResourceDescriptor.newInstance(1, 1, 1, 0L), null, null, 1, null, null);
 

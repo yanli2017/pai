@@ -16,26 +16,24 @@
 #### 3. Start PAI Services
 
 ## Quick Start
-### 1. Upload data and code
-### 2. Submit job
+#### 1. Upload data and code
+#### 2. Submit job
 
 ## System Architecture
-<p style="text-align: left;">
-  <img src="./sysarch.png" title="System Architecture" alt="System Architecture" />
-</p>
+
 ## Contributing
 
 ## Where to Go from Here
 
-### OpenPAI Programming Guides:
-### Restful API Docs:
-### Deployment Guides:
-### Other Documents:
-#### Configuration: customize OpenPAI via its configuration 
-#### Monitoring: track the behavior of your jobs
-#### Job Scheduling: scheduling resources across and within OpenPAI jobs
-#### FrameworkLauncher: Launching customize Framework by Launcher Service
-#### Third Party Projects: related third party OpenPAI projects
+#### OpenPAI Programming Guides:
+#### Restful API Docs:
+#### Deployment Guides:
+#### Other Documents:
+##### Configuration: customize OpenPAI via its configuration 
+##### Monitoring: track the behavior of your jobs
+##### Job Scheduling: scheduling resources across and within OpenPAI jobs
+##### FrameworkLauncher: Launching customize Framework by Launcher Service
+##### Third Party Projects: related third party OpenPAI projects
 
 ### External Resources:
 #### StackOverflow: tag openpai

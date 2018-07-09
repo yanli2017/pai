@@ -10,14 +10,14 @@
 ## Setup
 ### &ensp;&ensp;&ensp;Prerequisite
 
-### Quickstart deployment process
-#### &ensp;&ensp;&ensp;1. Prepare configuration
-#### &ensp;&ensp;&ensp;2. Boot up K8s
-#### &ensp;&ensp;&ensp;3. Start PAI Services
+### &ensp;&ensp;&ensp;Quickstart deployment process
+#### &ensp;&ensp;&ensp;&ensp;1. Prepare configuration
+#### &ensp;&ensp;&ensp;&ensp;2. Boot up K8s
+#### &ensp;&ensp;&ensp;&ensp;3. Start PAI Services
 
 ## Quick Start
-#### &ensp;&ensp;&ensp;1. Upload data and code
-#### &ensp;&ensp;&ensp;2. Submit job
+#### &ensp;&ensp;&ensp;&ensp;1. Upload data and code
+#### &ensp;&ensp;&ensp;&ensp;2. Submit job
 
 ## System Architecture
 
@@ -35,6 +35,6 @@
 ##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;FrameworkLauncher: Launching customize Framework by Launcher Service
 ##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Third Party Projects: related third party OpenPAI projects
 
-### External Resources:
-#### &ensp;&ensp;&ensp;&ensp;StackOverflow: tag openpai
-#### &ensp;&ensp;&ensp;&ensp;Mailing Lists: ask questions about OpenPAI here
+#### &ensp;&ensp;&ensp;External Resources:
+##### &ensp;&ensp;&ensp;&ensp;&ensp;StackOverflow: tag openpai
+##### &ensp;&ensp;&ensp;&ensp;&ensp;Mailing Lists: ask questions about OpenPAI here

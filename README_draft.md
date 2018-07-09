@@ -5,19 +5,19 @@
 
 ## Introduction
 
-##  The OpenPAI Misson and Features
+## The OpenPAI Misson and Features
 
 ## Setup
-### Prerequisite
+### &ensp;&ensp;&ensp;Prerequisite
 
 ### Quickstart deployment process
-#### 1. Prepare configuration
-#### 2. Boot up K8s
-#### 3. Start PAI Services
+#### &ensp;&ensp;&ensp;1. Prepare configuration
+#### &ensp;&ensp;&ensp;2. Boot up K8s
+#### &ensp;&ensp;&ensp;3. Start PAI Services
 
 ## Quick Start
-#### 1. Upload data and code
-#### 2. Submit job
+#### &ensp;&ensp;&ensp;1. Upload data and code
+#### &ensp;&ensp;&ensp;2. Submit job
 
 ## System Architecture
 
@@ -25,16 +25,16 @@
 
 ## Where to Go from Here
 
-#### OpenPAI Programming Guides:
-#### Restful API Docs:
-#### Deployment Guides:
-#### Other Documents:
-##### Configuration: customize OpenPAI via its configuration 
-##### Monitoring: track the behavior of your jobs
-##### Job Scheduling: scheduling resources across and within OpenPAI jobs
-##### FrameworkLauncher: Launching customize Framework by Launcher Service
-##### Third Party Projects: related third party OpenPAI projects
+#### &ensp;&ensp;&ensp;&ensp;OpenPAI Programming Guides:
+#### &ensp;&ensp;&ensp;&ensp;Restful API Docs:
+#### &ensp;&ensp;&ensp;&ensp;Deployment Guides:
+#### &ensp;&ensp;&ensp;&ensp;Other Documents:
+##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Configuration: customize OpenPAI via its configuration 
+##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Monitoring: track the behavior of your jobs
+##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Job Scheduling: scheduling resources across and within OpenPAI jobs
+##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;FrameworkLauncher: Launching customize Framework by Launcher Service
+##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Third Party Projects: related third party OpenPAI projects
 
 ### External Resources:
-#### StackOverflow: tag openpai
-#### Mailing Lists: ask questions about OpenPAI here
+#### &ensp;&ensp;&ensp;&ensp;StackOverflow: tag openpai
+#### &ensp;&ensp;&ensp;&ensp;Mailing Lists: ask questions about OpenPAI here

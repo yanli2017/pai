@@ -3,9 +3,9 @@
 [![Build Status](https://travis-ci.org/Microsoft/pai.svg?branch=master)](https://travis-ci.org/Microsoft/pai)
 
 
-## Introduction
+## What’s openPai?
 
-## The OpenPAI Mission and Features
+## Why choose OpenPAI?
 
 ## Setup
 ### &ensp;&ensp;&ensp;Prerequisite
@@ -25,15 +25,16 @@
 
 ## Where to Go from Here
 
-#### &ensp;&ensp;&ensp;&ensp;OpenPAI Programming Guides
-#### &ensp;&ensp;&ensp;&ensp;Restful API Docs
-#### &ensp;&ensp;&ensp;&ensp;Deployment Guides
+#### &ensp;&ensp;&ensp;&ensp;[OpenPAI Programming Guides](https://github.com/Microsoft/pai/blob/master/examples/README.md)
+#### &ensp;&ensp;&ensp;&ensp;[Restful API Docs](https://github.com/Microsoft/pai/blob/master/rest-server/README.md)
+#### &ensp;&ensp;&ensp;&ensp;[Deployment Guides](https://github.com/Microsoft/pai/blob/master/pai-management/doc/cluster-bootup.md)
+#### &ensp;&ensp;&ensp;&ensp;[Cluster Maintenance Guides](https://github.com/Microsoft/pai/wiki/Cluster-Maintenance)
 #### &ensp;&ensp;&ensp;&ensp;Other Documents:
-##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Configuration: customize OpenPAI via its configuration 
-##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Monitoring: track the behavior of your jobs
-##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Job Scheduling: scheduling resources across OpenPAI jobs
-##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;FrameworkLauncher: launching customize Framework by Launcher Service
-##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Third Party Projects: related third party OpenPAI projects
+##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[Configuration: customize OpenPAI via its configuration](https://github.com/Microsoft/pai/blob/master/pai-management/doc/how-to-write-pai-configuration.md#cluster_configuration)
+##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[Monitoring: track the behavior of your jobs]()
+##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[Job Scheduling: scheduling resources across OpenPAI jobs](https://github.com/Microsoft/pai/blob/master/hadoop-ai/README.md)
+##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[FrameworkLauncher: launching customize Framework by Launcher Service](https://github.com/Microsoft/pai/blob/master/frameworklauncher/README.md)
+##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[Third Party Projects: related third party OpenPAI projects]()
 
 #### &ensp;&ensp;&ensp;External Resources:
 ##### &ensp;&ensp;&ensp;&ensp;&ensp;StackOverflow: tag openpai

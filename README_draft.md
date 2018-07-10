@@ -25,14 +25,14 @@
 
 ## Where to Go from Here
 
-#### &ensp;&ensp;&ensp;&ensp;OpenPAI Programming Guides:
-#### &ensp;&ensp;&ensp;&ensp;Restful API Docs:
-#### &ensp;&ensp;&ensp;&ensp;Deployment Guides:
+#### &ensp;&ensp;&ensp;&ensp;OpenPAI Programming Guides
+#### &ensp;&ensp;&ensp;&ensp;Restful API Docs
+#### &ensp;&ensp;&ensp;&ensp;Deployment Guides
 #### &ensp;&ensp;&ensp;&ensp;Other Documents:
 ##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Configuration: customize OpenPAI via its configuration 
 ##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Monitoring: track the behavior of your jobs
-##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Job Scheduling: scheduling resources across and within OpenPAI jobs
-##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;FrameworkLauncher: Launching customize Framework by Launcher Service
+##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Job Scheduling: scheduling resources across OpenPAI jobs
+##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;FrameworkLauncher: launching customize Framework by Launcher Service
 ##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Third Party Projects: related third party OpenPAI projects
 
 #### &ensp;&ensp;&ensp;External Resources:

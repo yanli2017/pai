@@ -5,7 +5,7 @@
 
 ## Introduction
 
-## The OpenPAI Misson and Features
+## The OpenPAI Mission and Features
 
 ## Setup
 ### &ensp;&ensp;&ensp;Prerequisite

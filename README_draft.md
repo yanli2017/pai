@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/Microsoft/pai.svg?branch=master)](https://travis-ci.org/Microsoft/pai)
 
 
-## What’s openPai?
+## What’s OpenPAI?
 
 ## Why choose OpenPAI?
 
@@ -37,5 +37,5 @@
 ##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[Third Party Projects: related third party OpenPAI projects]()
 
 #### &ensp;&ensp;&ensp;External Resources:
-##### &ensp;&ensp;&ensp;&ensp;&ensp;StackOverflow: tag openpai
+##### &ensp;&ensp;&ensp;&ensp;&ensp;StackOverflow: [tag openpai](https://stackoverflow.com/questions/tagged/openpai)
 ##### &ensp;&ensp;&ensp;&ensp;&ensp;Mailing Lists: ask questions about OpenPAI here

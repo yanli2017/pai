@@ -2,6 +2,13 @@
 
 [![Build Status](https://travis-ci.org/Microsoft/pai.svg?branch=master)](https://travis-ci.org/Microsoft/pai)
 
+# Table of Contents
+1. [What’s OpenPAI?](#what’s-openpai)
+2. [Why choose OpenPAI](#why-choose-openpai)
+3. [Setup](#setup)
+4. [Quick Start](#quick-start)
+5. [Contributing](#contributing)
+6. [Where to Go from Here](#where-to-go-from-here)
 
 ## What’s OpenPAI?
 Platform for AI (PAI) is a platform for cluster management and resource scheduling. The platform incorporates the mature design that has a proven track record in Microsoft's large scale production environment.

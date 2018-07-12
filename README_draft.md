@@ -35,10 +35,12 @@ We assume that the whole cluster has already been configured by the system maint
 - All machines to be set up as masters should be in the same network segment.
 - A load balancer is prepared if there are multiple masters to be set up
 
-### &ensp;&ensp;&ensp;Quickstart deployment process
-#### &ensp;&ensp;&ensp;&ensp;1. Prepare configuration
-#### &ensp;&ensp;&ensp;&ensp;2. Boot up K8s
-#### &ensp;&ensp;&ensp;&ensp;3. Start PAI Services
+### &ensp;&ensp;&ensp;[Quickstart deployment process](./docs/quick_deployment.md)
+#### &ensp;&ensp;&ensp;&ensp;Step 0. Prepare the dev-box
+#### &ensp;&ensp;&ensp;&ensp;Step 1. Prepare the quick-start.yaml file
+#### &ensp;&ensp;&ensp;&ensp;Step 2. Generate PAI configuration files
+#### &ensp;&ensp;&ensp;&ensp;Step 3. Boot up Kubernetes
+#### &ensp;&ensp;&ensp;&ensp;Step 4. Start all PAI services
 
 ## Quick Start
 #### &ensp;&ensp;&ensp;&ensp;1. Upload data and code

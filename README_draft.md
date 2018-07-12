@@ -8,6 +8,12 @@ Platform for AI (PAI) is a platform for cluster management and resource scheduli
 
 PAI supports AI jobs (e.g., deep learning jobs) running in a GPU cluster. The platform provides PAI runtime environment support, with which existing deep learning frameworks, e.g., CNTK and TensorFlow, can onboard PAI without any code changes. The runtime environment support provides great extensibility: new workload can leverage the environment support to run on PAI with just a few extra lines of script and/or Python code.
 
+<p style="text-align: left;">
+  <img src="./sysarch.png" title="System Architecture" alt="System Architecture" />
+</p>
+
+The [system architecture](./docs/system_architecture.md) is illustrated above.
+
 ## Why choose OpenPAI?
 ### Microservices Architecture
 PAI embraces a microservices architecture: every component runs in a container. The system leverages Kubernetes to deploy and manage static components in the system. The more dynamic deep learning jobs are scheduled and managed by Hadoop YARN with our GPU enhancement. The training data and training results are stored in Hadoop HDFS.
@@ -39,29 +45,10 @@ We assume that the whole cluster has already been configured by the system maint
 Use HDFS tools to upload your code and data to HDFS on the system. We upload a [Docker image](https://hub.docker.com/r/paiexample/pai.example.hdfs/) to DockerHub with built-in HDFS support.
 Please refer to the [HDFS commands guide](https://hadoop.apache.org/docs/r2.7.2/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html) for details. 
 #### &ensp;&ensp;&ensp;&ensp;2. Submit job
-##### 2.1 Prepare a job config file
+- Prepare a job config file
 Prepare the [config file](#json-config-file-for-job-submission) for your job.
-##### 2.2 Submit the job through web portal
+- Submit the job through web portal
 Open web portal in a browser, click "Submit Job" and upload your config file.
-
-## System Architecture
-
-<p style="text-align: left;">
-  <img src="./sysarch.png" title="System Architecture" alt="System Architecture" />
-</p>
-
-The system architecture is illustrated above.
-User submits jobs or monitors cluster status through the [Web Portal](./webportal/README.md),
-which calls APIs provided by the [REST server](./rest-server/README.md).
-Third party tools can also call REST server directly for job management.
-Upon receiving API calls, the REST server coordinates with [FrameworkLauncher](./frameworklauncher/README.md) (short for Launcher)
-to perform job management.
-The Launcher Server handles requests from the REST Server and submits jobs to Hadoop YARN.
-The job, scheduled by YARN with [GPU enhancement](https://issues.apache.org/jira/browse/YARN-7481),
-can leverage GPUs in the cluster for deep learning computation. Other type of CPU based AI workloads or traditional big data job
-can also run in the platform, coexisted with those GPU-based jobs.
-The platform leverages HDFS to store data. All jobs are assumed to support HDFS.
-All the static services (blue-lined box) are managed by Kubernetes, while jobs (purple-lined box) are managed by Hadoop YARN.
 
 ## Contributing
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a

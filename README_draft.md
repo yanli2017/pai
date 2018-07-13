@@ -3,14 +3,15 @@
 [![Build Status](https://travis-ci.org/Microsoft/pai.svg?branch=master)](https://travis-ci.org/Microsoft/pai)
 
 # Table of Contents
-1. [What’s OpenPAI?](#what’s-openpai)
+1. [What’s OpenPAI](#what’s-openpai)
 2. [Why choose OpenPAI](#why-choose-openpai)
 3. [Setup](#setup)
 4. [Quick Start](#quick-start)
 5. [Contributing](#contributing)
-6. [Where to Go from Here](#where-to-go-from-here)
+6. [Documentation](#documentation)
+7. [Get Involved](#get-involved)
 
-## What’s OpenPAI?
+## What’s OpenPAI
 Platform for AI (PAI) is a platform for cluster management and resource scheduling. The platform incorporates the mature design that has a proven track record in Microsoft's large scale production environment.
 
 PAI supports AI jobs (e.g., deep learning jobs) running in a GPU cluster. The platform provides PAI runtime environment support, with which existing deep learning frameworks, e.g., CNTK and TensorFlow, can onboard PAI without any code changes. The runtime environment support provides great extensibility: new workload can leverage the environment support to run on PAI with just a few extra lines of script and/or Python code.
@@ -21,7 +22,7 @@ PAI supports AI jobs (e.g., deep learning jobs) running in a GPU cluster. The pl
 
 The [system architecture](./docs/system_architecture.md) is illustrated above.
 
-## Why choose OpenPAI?
+## Why choose OpenPAI
 ### Microservices Architecture
 PAI embraces a microservices architecture: every component runs in a container. The system leverages Kubernetes to deploy and manage static components in the system. The more dynamic deep learning jobs are scheduled and managed by Hadoop YARN with our GPU enhancement. The training data and training results are stored in Hadoop HDFS.
 ### Deep learning workload and GPU scheduling
@@ -42,12 +43,8 @@ We assume that the whole cluster has already been configured by the system maint
 - All machines to be set up as masters should be in the same network segment.
 - A load balancer is prepared if there are multiple masters to be set up
 
-### &ensp;&ensp;&ensp;[Quickstart deployment process](./docs/quick_deployment.md)
-#### &ensp;&ensp;&ensp;&ensp;Step 0. Prepare the dev-box
-#### &ensp;&ensp;&ensp;&ensp;Step 1. Prepare the quick-start.yaml file
-#### &ensp;&ensp;&ensp;&ensp;Step 2. Generate PAI configuration files
-#### &ensp;&ensp;&ensp;&ensp;Step 3. Boot up Kubernetes
-#### &ensp;&ensp;&ensp;&ensp;Step 4. Start all PAI services
+### For beginner to setup cluster: [Quickstart deployment process](./docs/quick_deployment.md)
+### For advanced user and developer to setup cluster: [Deployment Guides](https://github.com/Microsoft/pai/blob/master/pai-management/doc/cluster-bootup.md)
 
 ## Quick Start
 #### &ensp;&ensp;&ensp;&ensp;1. Upload data and code
@@ -72,19 +69,9 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-## Where to Go from Here
-#### &ensp;&ensp;&ensp;&ensp;[System architecture](./docs/system_architecture.md)
-#### &ensp;&ensp;&ensp;&ensp;[OpenPAI Programming Guides](https://github.com/Microsoft/pai/blob/master/examples/README.md)
-#### &ensp;&ensp;&ensp;&ensp;[Restful API Docs](https://github.com/Microsoft/pai/blob/master/rest-server/README.md)
-#### &ensp;&ensp;&ensp;&ensp;[Deployment Guides](https://github.com/Microsoft/pai/blob/master/pai-management/doc/cluster-bootup.md)
-#### &ensp;&ensp;&ensp;&ensp;[Cluster Maintenance Guides](https://github.com/Microsoft/pai/wiki/Cluster-Maintenance)
-#### &ensp;&ensp;&ensp;&ensp;Other Documents:
-##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[Configuration: customize OpenPAI via its configuration](https://github.com/Microsoft/pai/blob/master/pai-management/doc/how-to-write-pai-configuration.md#cluster_configuration)
-##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[Monitoring: track the behavior of your jobs]()
-##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[Job Scheduling: scheduling resources across OpenPAI jobs](https://github.com/Microsoft/pai/blob/master/hadoop-ai/README.md)
-##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[FrameworkLauncher: launching customize Framework by Launcher Service](https://github.com/Microsoft/pai/blob/master/frameworklauncher/README.md)
-##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[Third Party Projects: related third party OpenPAI projects]()
+## Documentation
+The OpenPAI user [Documentation](./docs/documentation.md) provides in-depth instructions for using OpenPAI
 
-#### &ensp;&ensp;&ensp;External Resources:
-##### &ensp;&ensp;&ensp;&ensp;&ensp;StackOverflow: [tag openpai](https://stackoverflow.com/questions/tagged/openpai)
-##### &ensp;&ensp;&ensp;&ensp;&ensp;Mailing Lists: ask questions about OpenPAI here
+## Get Involved
+- StackOverflow: [tag openpai](https://stackoverflow.com/questions/tagged/openpai)
+- Mailing Lists: ask questions about OpenPAI here

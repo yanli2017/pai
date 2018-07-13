@@ -1,5 +1,5 @@
 ## Documentation
-#### &ensp;&ensp;&ensp;&ensp;[System architecture](./docs/system_architecture.md)
+#### &ensp;&ensp;&ensp;&ensp;[System architecture](./system_architecture.md)
 #### &ensp;&ensp;&ensp;&ensp;[OpenPAI Programming Guides](https://github.com/Microsoft/pai/blob/master/examples/README.md)
 #### &ensp;&ensp;&ensp;&ensp;[Restful API Docs](https://github.com/Microsoft/pai/blob/master/rest-server/README.md)
 #### &ensp;&ensp;&ensp;&ensp;[Deployment Guides](https://github.com/Microsoft/pai/blob/master/pai-management/doc/cluster-bootup.md)

@@ -33,7 +33,7 @@ OpenPAI is open source giving you the freedom to take advantage of on-premises, 
 One key purpose of PAI is to support the highly diversified requirements from academia and industry. PAI is completely open: it is under the MIT license. PAI is architected in a modular way: different module can be plugged in as appropriate. This makes PAI particularly attractive to evaluate various research ideas, which include but not limited to the following [components](./docs/reasearch.md).
 
 ## Setup
-### &ensp;&ensp;&ensp;Prerequisite
+#### Prerequisite
 We assume that the whole cluster has already been configured by the system maintainer to meet the following requirements:
 
 - A [dev-box](./how-to-setup-dev-box.md) has been set up and can access the cluster.
@@ -43,17 +43,20 @@ We assume that the whole cluster has already been configured by the system maint
 - All machines to be set up as masters should be in the same network segment.
 - A load balancer is prepared if there are multiple masters to be set up
 
-### For beginner to setup cluster: [Quickstart deployment process](./docs/quick_deployment.md)
-### For advanced user and developer to setup cluster: [Deployment Guides](https://github.com/Microsoft/pai/blob/master/pai-management/doc/cluster-bootup.md)
+#### For beginner to setup cluster: [Quickstart deployment process](./docs/quick_deployment.md)
+#### For advanced user and developer to setup cluster: [Deployment Guides](https://github.com/Microsoft/pai/blob/master/pai-management/doc/cluster-bootup.md)
 
 ## Quick Start
-#### &ensp;&ensp;&ensp;&ensp;1. Upload data and code
+#### 1. Upload data and code
 Use HDFS tools to upload your code and data to HDFS on the system. We upload a [Docker image](https://hub.docker.com/r/paiexample/pai.example.hdfs/) to DockerHub with built-in HDFS support.
 Please refer to the [HDFS commands guide](https://hadoop.apache.org/docs/r2.7.2/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html) for details. 
-#### &ensp;&ensp;&ensp;&ensp;2. Submit job
+#### 2. Submit job
 - Prepare a job config file
-Prepare the [config file](#json-config-file-for-job-submission) for your job.
+
+Prepare the [config file](https://github.com/Microsoft/pai/tree/master/job-tutorial#json-config-file-for-job-submission) for your job.
+
 - Submit the job through web portal
+
 Open web portal in a browser, click "Submit Job" and upload your config file.
 
 ## Contributing
@@ -74,4 +77,3 @@ The OpenPAI user [Documentation](./docs/documentation.md) provides in-depth inst
 
 ## Get Involved
 - StackOverflow: [tag openpai](https://stackoverflow.com/questions/tagged/openpai)
-- Mailing Lists: ask questions about OpenPAI here

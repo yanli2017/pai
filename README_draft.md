@@ -33,7 +33,7 @@ OpenPAI is open source giving you the freedom to take advantage of on-premises, 
 One key purpose of PAI is to support the highly diversified requirements from academia and industry. PAI is completely open: it is under the MIT license. PAI is architected in a modular way: different module can be plugged in as appropriate. This makes PAI particularly attractive to evaluate various research ideas, which include but not limited to the following [components](./docs/reasearch.md).
 
 ## Setup
-#### Prerequisite
+#### 1. Prerequisite
 We assume that the whole cluster has already been configured by the system maintainer to meet the following requirements:
 
 - A [dev-box](https://github.com/Microsoft/pai/blob/master/pai-management/doc/how-to-setup-dev-box.md) has been set up and can access the cluster.
@@ -41,13 +41,13 @@ We assume that the whole cluster has already been configured by the system maint
   - SSH service is enabled on each of the machines.
   - All machines share the same username / password for the SSH service on each of them.
   - The username that can be used to login to each machine should have sudo privilege.
-- if there are multiple masters to be set up
+- If there are multiple masters to be set up
   - All machines to be set up as masters should be in the same network segment.
   - A load balancer is prepared
-
-#### For beginner to setup cluster: [Quickstart deployment process](./docs/quick_deployment.md)
-#### For advanced user and developer to setup cluster: [Deployment Guides](https://github.com/Microsoft/pai/blob/master/pai-management/doc/cluster-bootup.md)
-#### Check the status of PAI services by accessing PAI web portal:
+#### 2. Setup
+##### 2.1 For beginner to setup cluster: [Quickstart deployment process](./docs/quick_deployment.md)
+##### 2.2 For advanced user and developer to setup cluster: [Deployment Guides](https://github.com/Microsoft/pai/blob/master/pai-management/doc/cluster-bootup.md)
+#### 3 Check the status of PAI services by accessing PAI web portal:
 
 http://<master_ip>:9286
 

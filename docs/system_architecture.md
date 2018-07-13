@@ -1,7 +1,7 @@
 ## System Architecture
 
 <p style="text-align: left;">
-  <img src="./sysarch.png" title="System Architecture" alt="System Architecture" />
+  <img src="https://github.com/Microsoft/pai/blob/master/sysarch.png" title="System Architecture" alt="System Architecture" />
 </p>
 
 The system architecture is illustrated above.

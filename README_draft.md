@@ -36,15 +36,20 @@ One key purpose of PAI is to support the highly diversified requirements from ac
 #### Prerequisite
 We assume that the whole cluster has already been configured by the system maintainer to meet the following requirements:
 
-- A [dev-box](./how-to-setup-dev-box.md) has been set up and can access the cluster.
-- SSH service is enabled on each of the machines.
-- All machines share the same username / password for the SSH service on each of them.
-- The username that can be used to login to each machine should have sudo privilege.
-- All machines to be set up as masters should be in the same network segment.
-- A load balancer is prepared if there are multiple masters to be set up
+- A [dev-box](https://github.com/Microsoft/pai/blob/master/pai-management/doc/how-to-setup-dev-box.md) has been set up and can access the cluster.
+- SSH service 
+  - SSH service is enabled on each of the machines.
+  - All machines share the same username / password for the SSH service on each of them.
+  - The username that can be used to login to each machine should have sudo privilege.
+- if there are multiple masters to be set up
+  - All machines to be set up as masters should be in the same network segment.
+  - A load balancer is prepared
 
 #### For beginner to setup cluster: [Quickstart deployment process](./docs/quick_deployment.md)
 #### For advanced user and developer to setup cluster: [Deployment Guides](https://github.com/Microsoft/pai/blob/master/pai-management/doc/cluster-bootup.md)
+#### Check the status of PAI services by accessing PAI web portal:
+
+http://<master_ip>:9286
 
 ## Quick Start
 #### 1. Upload data and code
@@ -57,7 +62,7 @@ Prepare the [config file](https://github.com/Microsoft/pai/tree/master/job-tutor
 
 - Submit the job through web portal
 
-Open web portal in a browser, click "Submit Job" and upload your config file.
+Open web portal (URL: http://<master_ip>:9286) in a browser, click "Submit Job" and upload your config file.
 
 ## Contributing
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a

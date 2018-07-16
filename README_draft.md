@@ -38,7 +38,7 @@ Cloud infrastructure.
 - Support all mainstream deep learning frameworks. Support complete training pipeline at one cluster: deep learning training combined with big data and jobs
 - Support HDFS/Hadoop, K8s, Yarn eco-system
 
-### Easy to extend (docker)
+### Easy to extend 
 
 - One key purpose of OpenPAI is to support the highly diversified requirements from academia and industry. OpenPAI is completely open: it is under the MIT license. 
 - OpenPAI is architected in a modular way: different module can be plugged in as appropriate. This makes OpenPAI particularly attractive to evaluate various research ideas, which include but not limited to the following [components](./docs/reasearch.md).

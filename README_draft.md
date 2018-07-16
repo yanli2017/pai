@@ -1,62 +1,73 @@
-# Open Platform for AI (PAI)
+# Open Platform for AI (OpenPAI) ![alt text][logo]
+
+[logo]: ./pailogo.jpg "OpenPAI"
 
 [![Build Status](https://travis-ci.org/Microsoft/pai.svg?branch=master)](https://travis-ci.org/Microsoft/pai)
+[![Coverage Status](https://coveralls.io/repos/github/Microsoft/pai/badge.svg?branch=master)](https://coveralls.io/github/Microsoft/pai?branch=master)
 
 # Table of Contents
 1. [What’s OpenPAI](#what’s-openpai)
 2. [Why choose OpenPAI](#why-choose-openpai)
 3. [Setup](#setup)
-4. [Quick Start](#quick-start)
-5. [Contributing](#contributing)
-6. [Documentation](#documentation)
-7. [Get Involved](#get-involved)
+4. [Model Training](#model-training)
+5. [Learn More](#learn-more)
+6. [Contributing](#contributing)
 
 ## What’s OpenPAI
-Platform for AI (PAI) is a platform for cluster management and resource scheduling. The platform incorporates the mature design that has a proven track record in Microsoft's large scale production environment.
+OpenPAI is a complete open source deep learning platform software. The platform incorporates the mature design that has a proven track record in Microsoft's large scale production environment.
 
-PAI supports AI jobs (e.g., deep learning jobs) running in a GPU cluster. The platform provides PAI runtime environment support, with which existing deep learning frameworks, e.g., CNTK and TensorFlow, can onboard PAI without any code changes. The runtime environment support provides great extensibility: new workload can leverage the environment support to run on PAI with just a few extra lines of script and/or Python code.
+OpenPAI supports AI jobs (e.g., deep learning jobs) running in a GPU cluster. The platform provides OpenPAI runtime environment support, with which existing deep learning frameworks, e.g., CNTK and TensorFlow, can onboard OpenPAI without any code changes. The runtime environment support provides great extensibility: new workload can leverage the environment support to run on OpenPAI with just a few extra lines of script and/or Python code.
 
 ## Why choose OpenPAI
-### Microservices Architecture
-PAI embraces a microservices architecture: every component runs in a container. The system leverages Kubernetes to deploy and manage static components in the system. The more dynamic deep learning jobs are scheduled and managed by Hadoop YARN with our GPU enhancement. The training data and training results are stored in Hadoop HDFS.
-### Deep learning workload and GPU scheduling
-PAI supports GPU scheduling, a key requirement of deep learning jobs. For better performance, PAI supports fine-grained topology-aware job placement that can request for the GPU with a specific location (e.g., under the same PCI-E switch).
-### Run Anywhere
-OpenPAI is open source giving you the freedom to take advantage of on-premises, hybrid, or public cloud infrastructure.
-### Open and Pluggable
-One key purpose of PAI is to support the highly diversified requirements from academia and industry. PAI is completely open: it is under the MIT license. PAI is architected in a modular way: different module can be plugged in as appropriate. This makes PAI particularly attractive to evaluate various research ideas, which include but not limited to the following [components](./docs/reasearch.md).
+### Support on-premises and easy to deploy
+
+- OpenPAI giving user the freedom to take advantage of on-premises, hybrid, or public 
+Cloud infrastructure. 
+- Comprehensive documents to guide user to deployment.
+- Supports single-box deployment for trial users
+
+### Design for Deep Learning and heterogeneous hardware 
+
+- Pre-built docker for popular AI frameworks, including new hardware.
+- Support Distributed training
+- Locality aware GPU scheduling. Heterogeneous hardware as first level concept for scheduler design. 
+
+### Most complete solution for deep learning 
+
+- User, data and job management via Virtual Cluster concept
+- Support all mainstream deep learning frameworks. Support complete training pipeline at one cluster: deep learning training combined with big data and jobs
+- Support HDFS/Hadoop, K8s, Yarn eco-system
+
+### Easy to extend (docker)
+
+- One key purpose of OpenPAI is to support the highly diversified requirements from academia and industry. OpenPAI is completely open: it is under the MIT license. 
+- OpenPAI is architected in a modular way: different module can be plugged in as appropriate. This makes OpenPAI particularly attractive to evaluate various research ideas, which include but not limited to the following [components](./docs/reasearch.md).
 
 ## Setup
-#### 1. Prerequisite
+#### 1 Prerequisite
 We assume that the whole cluster has already been configured by the system maintainer to meet the following requirements:
+- Recommend Ubuntu 16.04 LTS. (CentOS and other linux system is not support at this time)
+- Assign each server static IP address.
+- Server can access the external network. Have access to a Docker registry service (e.g., Docker hub) to store the Docker images for the services to be deployed.
+- All machines' SSH service is enabled, share the same username / password and have sudo privilege. 
+- Need NTP service for clock synchronization. Recommend use default.
+- Recommend no Docker installed or a Docker with api version >= 1.26.
+- Network reachable between servers.
 
-- A [dev-box](https://github.com/Microsoft/pai/blob/master/pai-management/doc/how-to-setup-dev-box.md) has been set up and can access the cluster.
-- SSH service 
-  - SSH service is enabled on each of the machines.
-  - All machines share the same username / password for the SSH service on each of them.
-  - The username that can be used to login to each machine should have sudo privilege.
-- If there are multiple masters to be set up
-  - All machines to be set up as masters should be in the same network segment.
-  - A load balancer is prepared
-#### 2. Setup
+#### 2 Setup
 ##### 2.1 For beginner to setup cluster: [Quickstart deployment process](./docs/quick_deployment.md)
 ##### 2.2 For advanced user and developer to setup cluster: [Deployment Guides](https://github.com/Microsoft/pai/blob/master/pai-management/doc/cluster-bootup.md)
-#### 3 Check the status of PAI services by accessing PAI web portal:
 
-http://<master_ip>:9286
+## Model Training
 
-## Quick Start
-#### 1. Upload data and code
-Use HDFS tools to upload your code and data to HDFS on the system. We upload a [Docker image](https://hub.docker.com/r/paiexample/pai.example.hdfs/) to DockerHub with built-in HDFS support.
-Please refer to the [HDFS commands guide](https://hadoop.apache.org/docs/r2.7.2/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html) for details. 
-#### 2. Submit job
-- Prepare a job config file
+- [Use Visual studio submit jobs](https://github.com/Microsoft/vs-tools-for-ai/blob/master/docs/pai.md) 
+- [Use Visual studio code submit jobs](https://github.com/Microsoft/vscode-tools-for-ai/blob/master/docs/quickstart-05-pai.md)
+- [Using OpenPAI webportal submit jobs](https://github.com/Microsoft/pai/blob/yanjga/doc/job-tutorial/README.md#job-submission)
+- [Job samples](https://github.com/Microsoft/pai/tree/yanjga/doc/examples)
 
-Prepare the [config file](https://github.com/Microsoft/pai/tree/master/job-tutorial#json-config-file-for-job-submission) for your job.
 
-- Submit the job through web portal
-
-Open web portal (URL: http://<master_ip>:9286) in a browser, click "Submit Job" and upload your config file.
+## Learn More
+The OpenPAI user [Documentation](./docs/documentation.md) provides in-depth instructions for using OpenPAI
 
 ## Contributing
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
@@ -70,9 +81,3 @@ provided by the bot. You will only need to do this once across all repos using o
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-## Documentation
-The OpenPAI user [Documentation](./docs/documentation.md) provides in-depth instructions for using OpenPAI
-
-## Get Involved
-- StackOverflow: [tag openpai](https://stackoverflow.com/questions/tagged/openpai)

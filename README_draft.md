@@ -6,14 +6,14 @@
 [![Coverage Status](https://coveralls.io/repos/github/Microsoft/pai/badge.svg?branch=master)](https://coveralls.io/github/Microsoft/pai?branch=master)
 
 # Table of Contents
-1. [What’s OpenPAI](#what’s-openpai)
+1. [What's OpenPAI](#what's-openpai)
 2. [Why choose OpenPAI](#why-choose-openpai)
 3. [Setup](#setup)
 4. [Model Training](#model-training)
 5. [Learn More](#learn-more)
 6. [Contributing](#contributing)
 
-## What’s OpenPAI
+## What's OpenPAI
 OpenPAI is a complete open source deep learning platform software. The platform incorporates the mature design that has a proven track record in Microsoft's large scale production environment.
 
 OpenPAI supports AI jobs (e.g., deep learning jobs) running in a GPU cluster. The platform provides OpenPAI runtime environment support, with which existing deep learning frameworks, e.g., CNTK and TensorFlow, can onboard OpenPAI without any code changes. The runtime environment support provides great extensibility: new workload can leverage the environment support to run on OpenPAI with just a few extra lines of script and/or Python code.
@@ -62,12 +62,12 @@ We assume that the whole cluster has already been configured by the system maint
 
 - [Use Visual studio submit jobs](https://github.com/Microsoft/vs-tools-for-ai/blob/master/docs/pai.md) 
 - [Use Visual studio code submit jobs](https://github.com/Microsoft/vscode-tools-for-ai/blob/master/docs/quickstart-05-pai.md)
-- [Using OpenPAI webportal submit jobs](https://github.com/Microsoft/pai/blob/yanjga/doc/job-tutorial/README.md#job-submission)
+- [Using PAI webportal submit jobs](https://github.com/Microsoft/pai/blob/yanjga/doc/job-tutorial/README.md#job-submission)
 - [Job samples](https://github.com/Microsoft/pai/tree/yanjga/doc/examples)
 
 
 ## Learn More
-The OpenPAI user [Documentation](./docs/documentation.md) provides in-depth instructions for using OpenPAI
+The OpenPAI user [Learn More Documentation](./docs/documentation.md) provides in-depth instructions for using OpenPAI
 
 ## Contributing
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a

@@ -1,6 +1,6 @@
-# PAI Quick Deployment
+# OpenPAI Quick Deployment
 
-PAI can be deployed on a single server.
+OpenPAI can be deployed on a single server.
 
 ## Step 0. Prepare the dev-box
 
@@ -14,7 +14,7 @@ An example yaml file is shown below. Note that you should change the IP address 
 ```yaml
 # quick-start.yaml
 
-# (Required) Please fill in the IP address of the server you would like to deploy PAI
+# (Required) Please fill in the IP address of the server you would like to deploy OpenPAI
 machines:
   - 192.168.1.11
   - 192.168.1.12
@@ -37,7 +37,7 @@ ssh-password: pai-password
 
 ```
 
-## Step 2. Generate PAI configuration files
+## Step 2. Generate OpenPAI configuration files
 
 After the quick-start.yaml is ready, use it to generate four configuration yaml files as follows.
 
@@ -60,7 +60,7 @@ Please refer to this [section](https://github.com/Microsoft/pai/blob/master/pai-
 Use the four yaml files to boot up k8s.
 Please refer to this [section](https://github.com/Microsoft/pai/blob/master/pai-management/doc/cluster-bootup.md#step-2) for details.
 
-## Step 4. Start all PAI services
+## Step 4. Start all OpenPAI services
 
-After k8s starts, boot up all PAI services.
+After k8s starts, boot up all OpenPAI services.
 Please refer to this [section](https://github.com/Microsoft/pai/blob/master/pai-management/doc/cluster-bootup.md#step-3) for details.

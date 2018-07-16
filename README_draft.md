@@ -16,12 +16,6 @@ Platform for AI (PAI) is a platform for cluster management and resource scheduli
 
 PAI supports AI jobs (e.g., deep learning jobs) running in a GPU cluster. The platform provides PAI runtime environment support, with which existing deep learning frameworks, e.g., CNTK and TensorFlow, can onboard PAI without any code changes. The runtime environment support provides great extensibility: new workload can leverage the environment support to run on PAI with just a few extra lines of script and/or Python code.
 
-<p style="text-align: left;">
-  <img src="./sysarch.png" title="System Architecture" alt="System Architecture" />
-</p>
-
-The [system architecture](./docs/system_architecture.md) is illustrated above.
-
 ## Why choose OpenPAI
 ### Microservices Architecture
 PAI embraces a microservices architecture: every component runs in a container. The system leverages Kubernetes to deploy and manage static components in the system. The more dynamic deep learning jobs are scheduled and managed by Hadoop YARN with our GPU enhancement. The training data and training results are stored in Hadoop HDFS.

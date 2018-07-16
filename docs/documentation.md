@@ -8,4 +8,5 @@
 ##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[Configuration: customize OpenPAI via its configuration](https://github.com/Microsoft/pai/blob/master/pai-management/doc/how-to-write-pai-configuration.md#cluster_configuration)
 ##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[Job Scheduling: scheduling resources across OpenPAI jobs](https://github.com/Microsoft/pai/blob/master/hadoop-ai/README.md)
 ##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[FrameworkLauncher: launching customize Framework by Launcher Service](https://github.com/Microsoft/pai/blob/master/frameworklauncher/README.md)
+##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[Known Issues](https://github.com/Microsoft/pai/wiki/Issue-tracking)
 ##### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[StackOverflow: tag openpai](https://stackoverflow.com/questions/tagged/openpai)

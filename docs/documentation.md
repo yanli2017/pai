@@ -11,5 +11,5 @@
 - [Deployment Guides](https://github.com/Microsoft/pai/blob/master/pai-management/doc/cluster-bootup.md)
 - [Cluster Maintenance Guides](https://github.com/Microsoft/pai/wiki/Maintenance-(Service-&-Machine))
 ## External Resources:
-- [StackOverflow: tag openpai](./stackoverflow.md)
-- [Known Issues](https://github.com/Microsoft/pai/wiki/Issue-tracking)
+- [StackOverflow:](./stackoverflow.md) If you have questions about OpenPAI, please submit question at stackoverflow under tag: openpai
+- [Known Issues:](https://github.com/Microsoft/pai/wiki/Issue-tracking) If you have issues/ bugs/ new features, please submit it at Github 

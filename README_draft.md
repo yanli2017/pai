@@ -24,19 +24,19 @@ OpenPAI supports AI jobs (e.g., deep learning jobs) running in a GPU cluster. Th
 - OpenPAI giving user the freedom to take advantage of on-premises, hybrid, or public 
 Cloud infrastructure. 
 - Comprehensive documents to guide user to deployment.
-- Supports single-box deployment for trial users
+- Supports single-box deployment for trial users.
 
 ### Design for Deep Learning and heterogeneous hardware 
 
 - Pre-built docker for popular AI frameworks, including new hardware.
-- Support Distributed training
+- Support Distributed training.
 - Locality aware GPU scheduling. Heterogeneous hardware as first level concept for scheduler design. 
 
 ### Most complete solution for deep learning 
 
-- User, data and job management via Virtual Cluster concept
-- Support all mainstream deep learning frameworks. Support complete training pipeline at one cluster: deep learning training combined with big data and jobs
-- Support HDFS/Hadoop, K8s, Yarn eco-system
+- User, data and job management via Virtual Cluster concept.
+- Support all mainstream deep learning frameworks. Support complete training pipeline at one cluster: deep learning training combined with big data and jobs.
+- Support HDFS/Hadoop, K8s, Yarn eco-system.
 
 ### Easy to extend 
 
@@ -46,7 +46,7 @@ Cloud infrastructure.
 ## Setup
 #### 1 Prerequisite
 We assume that the whole cluster has already been configured by the system maintainer to meet the following requirements:
-- Recommend Ubuntu 16.04 LTS. (CentOS and other linux system is not support at this time)
+- Recommend Ubuntu 16.04 LTS. (CentOS and other linux system is not support at this time).
 - Assign each server static IP address.
 - Server can access the external network. Have access to a Docker registry service (e.g., Docker hub) to store the Docker images for the services to be deployed.
 - All machines' SSH service is enabled, share the same username / password and have sudo privilege. 
@@ -67,7 +67,7 @@ We assume that the whole cluster has already been configured by the system maint
 
 
 ## Learn More
-The OpenPAI user [Learn More Documentation](./docs/documentation.md) provides in-depth instructions for using OpenPAI
+The OpenPAI user [Learn More Documentation](./docs/documentation.md) provides in-depth instructions for using OpenPAI.
 
 ## Contributing
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
